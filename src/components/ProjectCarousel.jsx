@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as ReactSlick from "react-slick";
 
 const Slider = ReactSlick.default?.default ?? ReactSlick.default ?? ReactSlick;
@@ -10,19 +10,30 @@ import { projects } from "../data/portfolioData";
 export default function ProjectCarousel() {
   const sliderRef = useRef(null);
 
+  // react-slick's `responsive` breakpoints only react to resize events (via
+  // matchMedia addListener), not the width at mount — so a page that loads
+  // directly at mobile width (e.g. a real phone) never gets the breakpoint
+  // applied. Track slidesToShow ourselves instead.
+  const [slidesToShow, setSlidesToShow] = useState(() =>
+    window.innerWidth < 1024 ? 1 : 2
+  );
+
+  useEffect(() => {
+    const onResize = () => setSlidesToShow(window.innerWidth < 1024 ? 1 : 2);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
   const settings = {
     dots: true,
     infinite: true,
     speed: 600,
-    slidesToShow: 2,
+    slidesToShow,
     slidesToScroll: 1,
     arrows: false,
     autoplay: true,
     autoplaySpeed: 5500,
     pauseOnHover: true,
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 1 } },
-    ],
   };
 
   return (
