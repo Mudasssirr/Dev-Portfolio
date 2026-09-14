@@ -8,16 +8,16 @@
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 
-  --color-bg: #05070d;
-  --color-surface: #0b0f1a;
-  --color-surface-2: #10162599;
-  --color-border: #ffffff14;
+  --color-bg: #faf8f3;
+  --color-surface: #ffffff;
+  --color-surface-2: #f2efe7cc;
+  --color-border: #00000014;
 
-  --color-cyan: #22d3ee;
-  --color-purple: #a855f7;
-  --color-green: #34d399;
-  --color-pink: #f472b6;
-  --color-amber: #fbbf24;
+  --color-cyan: #000000;
+  --color-purple: #000000;
+  --color-green: #000000;
+  --color-pink: #000000;
+  --color-amber: #000000;
 }
 
 html {
@@ -26,14 +26,14 @@ html {
 
 body {
   background-color: var(--color-bg);
-  color: #e6edf3;
+  color: #111111;
   font-family: var(--font-sans);
   overflow-x: hidden;
 }
 
 ::selection {
-  background: #22d3ee55;
-  color: #fff;
+  background: #00000022;
+  color: #000;
 }
 
 /* Scrollbar */
@@ -44,48 +44,45 @@ body {
   background: var(--color-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #22d3ee, #a855f7);
+  background: #000000;
   border-radius: 8px;
 }
 
 /* Glass panel utility */
 .glass {
-  background: rgba(16, 22, 37, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
 
 .text-gradient {
-  background: linear-gradient(90deg, #22d3ee, #a855f7 60%, #34d399);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #000000;
 }
 
 /* Grid / dot background */
 .bg-grid {
   background-image:
-    linear-gradient(to right, #ffffff08 1px, transparent 1px),
-    linear-gradient(to bottom, #ffffff08 1px, transparent 1px);
+    linear-gradient(to right, #00000008 1px, transparent 1px),
+    linear-gradient(to bottom, #00000008 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
 .glow-cyan {
-  box-shadow: 0 0 40px -10px #22d3ee55;
+  box-shadow: 0 0 40px -10px #00000033;
 }
 .glow-purple {
-  box-shadow: 0 0 40px -10px #a855f755;
+  box-shadow: 0 0 40px -10px #00000033;
 }
 
 /* Typed.js cursor */
 .typed-cursor {
-  color: #22d3ee;
+  color: #000000;
 }
 
-/* Vertical timeline overrides for dark IDE theme */
+/* Vertical timeline overrides for light theme */
 .vertical-timeline::before {
-  background: linear-gradient(180deg, #22d3ee55, #a855f755, #34d39955) !important;
+  background: #000000 !important;
   width: 3px !important;
 }
 .vertical-timeline-element-content {
@@ -97,18 +94,18 @@ body {
   display: none !important;
 }
 .vertical-timeline-element-icon {
-  box-shadow: 0 0 0 4px #ffffff10, 0 0 25px 2px currentColor !important;
+  box-shadow: 0 0 0 4px #00000010, 0 0 25px 2px currentColor !important;
 }
 
 /* Slick dots */
 .slick-dots li button:before {
-  color: #22d3ee !important;
+  color: #000000 !important;
   opacity: 0.4 !important;
   font-size: 9px !important;
 }
 .slick-dots li.slick-active button:before {
   opacity: 1 !important;
-  color: #a855f7 !important;
+  color: #000000 !important;
 }
 .slick-slide > div {
   height: 100%;

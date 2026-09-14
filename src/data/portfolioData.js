@@ -27,8 +27,6 @@ import {
   SiFirebase,
   SiTypescript,
   SiJavascript,
-  SiSocketdotio,
-  SiMariadb,
   SiAxios,
 } from "react-icons/si";
 
@@ -93,7 +91,6 @@ export const skillCategories = [
       { name: "React Native", icon: FaReact },
       { name: "Redux", icon: SiRedux },
       { name: "Axios", icon: SiAxios },
-      { name: "Socket.io", icon: SiSocketdotio },
     ],
   },
   {
@@ -101,7 +98,6 @@ export const skillCategories = [
     accent: "green",
     skills: [
       { name: "MySQL", icon: SiMysql },
-      { name: "MariaDB", icon: SiMariadb },
       { name: "Firebase", icon: SiFirebase },
       { name: "MongoDB", icon: SiMongodb },
     ],
@@ -136,7 +132,7 @@ export const experience = [
       "Built responsive interfaces with jQuery, AJAX, Select2, and Bootstrap, and integrated DOMPDF for dynamic invoice and report generation.",
       "Conducted full-stack debugging, database indexing, and query refactoring, resolving critical production bugs and reducing system downtime by 25%.",
     ],
-    tech: ["Laravel", "MySQL", "JWT/OAuth2", "AI Integration", "DOMPDF"],
+    tech: ["Laravel", "MySQL", "JWT/OAuth2", "AI Integration"],
   },
   {
     id: "waaps",

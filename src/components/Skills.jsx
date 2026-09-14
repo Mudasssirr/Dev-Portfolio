@@ -4,19 +4,19 @@ import { skillCategories } from "../data/portfolioData";
 
 const accentMap = {
   cyan: {
-    text: "text-cyan-400",
-    border: "hover:border-cyan-400/50",
-    glow: "hover:shadow-cyan-500/20",
+    text: "text-black",
+    border: "hover:border-black/50",
+    glow: "hover:shadow-black/20",
   },
   purple: {
-    text: "text-purple-400",
-    border: "hover:border-purple-400/50",
-    glow: "hover:shadow-purple-500/20",
+    text: "text-black",
+    border: "hover:border-black/50",
+    glow: "hover:shadow-black/20",
   },
   green: {
-    text: "text-green-400",
-    border: "hover:border-green-400/50",
-    glow: "hover:shadow-green-500/20",
+    text: "text-black",
+    border: "hover:border-black/50",
+    glow: "hover:shadow-black/20",
   },
 };
 
@@ -62,10 +62,10 @@ export default function Skills() {
                       key={name}
                       variants={item}
                       whileHover={{ y: -4 }}
-                      className={`glass rounded-lg px-4 py-3 flex items-center gap-3 border border-white/5 transition-all shadow-lg shadow-black/20 ${accent.border} ${accent.glow}`}
+                      className={`glass rounded-lg px-4 py-3 flex items-center gap-3 border border-black/5 transition-all shadow-lg shadow-black/20 ${accent.border} ${accent.glow}`}
                     >
                       <Icon className={`text-xl ${accent.text}`} />
-                      <span className="font-mono text-sm text-white/80">
+                      <span className="font-mono text-sm text-black/80">
                         {name}
                       </span>
                     </motion.div>

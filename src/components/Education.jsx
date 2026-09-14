@@ -17,17 +17,17 @@ export default function Education() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="glass rounded-xl p-6 border border-white/5 flex gap-4"
+              className="glass rounded-xl p-6 border border-black/5 flex gap-4"
             >
-              <div className="w-11 h-11 shrink-0 rounded-lg bg-green-400/10 text-green-400 flex items-center justify-center text-lg">
+              <div className="w-11 h-11 shrink-0 rounded-lg bg-black/10 text-black flex items-center justify-center text-lg">
                 <FaGraduationCap />
               </div>
               <div>
-                <p className="font-mono text-xs text-green-400 mb-1">
+                <p className="font-mono text-xs text-black mb-1">
                   {edu.date}
                 </p>
-                <h3 className="font-bold text-white/90">{edu.degree}</h3>
-                <p className="text-sm text-white/50">{edu.institution}</p>
+                <h3 className="font-bold text-black/90">{edu.degree}</h3>
+                <p className="text-sm text-black/50">{edu.institution}</p>
               </div>
             </motion.div>
           ))}

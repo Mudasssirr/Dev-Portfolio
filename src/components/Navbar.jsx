@@ -13,6 +13,15 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    setOpen(false);
+    history.pushState(null, "", href);
+    setTimeout(() => {
+      document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    }, 350);
+  };
+
   return (
     <motion.header
       initial={{ y: -80, opacity: 0 }}
@@ -24,20 +33,21 @@ export default function Navbar() {
     >
       <nav className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
         <a href="#home" className="font-mono font-bold text-lg">
-          <span className="text-purple-400">&lt;</span>
+          <span className="text-black">&lt;</span>
           <span className="text-gradient">{personalInfo.firstName}</span>
-          <span className="text-purple-400"> /&gt;</span>
+          <span className="text-black"> /&gt;</span>
         </a>
 
-        <ul className="hidden md:flex items-center gap-8 font-mono text-sm text-white/70">
+        <ul className="hidden md:flex items-center gap-8 font-mono text-sm text-black/70">
           {navLinks.map((link, i) => (
             <li key={link.name}>
               <a
                 href={link.href}
-                className="hover:text-cyan-400 transition-colors relative group"
+                onClick={(e) => handleNavClick(e, link.href)}
+                className="hover:text-black transition-colors relative group"
               >
-                <span className="text-purple-400/70">0{i}.</span> {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-cyan-400 transition-all group-hover:w-full" />
+                <span className="text-black/70">0{i}.</span> {link.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-px bg-black transition-all group-hover:w-full" />
               </a>
             </li>
           ))}
@@ -46,13 +56,13 @@ export default function Navbar() {
         <a
           href={personalInfo.resumeUrl}
           download
-          className="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg border border-white/15 font-mono text-xs font-semibold text-white/80 hover:border-green-400/50 hover:text-green-300 transition"
+          className="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg border border-black/15 font-mono text-xs font-semibold text-black/80 hover:border-black/50 hover:text-black transition"
         >
           <FaDownload /> Download CV
         </a>
 
         <button
-          className="md:hidden text-2xl text-cyan-400"
+          className="md:hidden text-2xl text-black"
           onClick={() => setOpen((o) => !o)}
           aria-label="Toggle menu"
         >
@@ -69,22 +79,22 @@ export default function Navbar() {
             className="md:hidden overflow-hidden glass px-6"
           >
             {navLinks.map((link, i) => (
-              <li key={link.name} className="py-3 border-t border-white/5">
+              <li key={link.name} className="py-3 border-t border-black/5">
                 <a
                   href={link.href}
-                  onClick={() => setOpen(false)}
-                  className="font-mono text-sm text-white/80"
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className="font-mono text-sm text-black/80"
                 >
-                  <span className="text-purple-400/70">0{i}.</span> {link.name}
+                  <span className="text-black/70">0{i}.</span> {link.name}
                 </a>
               </li>
             ))}
-            <li className="py-3 border-t border-white/5">
+            <li className="py-3 border-t border-black/5">
               <a
                 href={personalInfo.resumeUrl}
                 download
                 onClick={() => setOpen(false)}
-                className="flex items-center gap-2 font-mono text-sm text-green-300"
+                className="flex items-center gap-2 font-mono text-sm text-black"
               >
                 <FaDownload /> Download CV
               </a>

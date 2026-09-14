@@ -8,9 +8,9 @@ import SectionHeading from "./SectionHeading";
 import { experience } from "../data/portfolioData";
 
 const accentColor = {
-  cyan: "#22d3ee",
-  purple: "#a855f7",
-  green: "#34d399",
+  cyan: "#000000",
+  purple: "#000000",
+  green: "#000000",
 };
 
 export default function ExperienceTimeline() {
@@ -29,9 +29,9 @@ export default function ExperienceTimeline() {
             return (
               <VerticalTimelineElement
                 key={job.id}
-                contentStyle={{ color: "#fff" }}
+                contentStyle={{ color: "#000" }}
                 iconStyle={{
-                  background: "#0b0f1a",
+                  background: "#ffffff",
                   color,
                 }}
                 icon={<FaBriefcase />}
@@ -41,14 +41,14 @@ export default function ExperienceTimeline() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, amount: 0.4 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
-                  className="glass rounded-xl p-6 border border-white/5"
+                  className="glass rounded-xl p-6 border border-black/5"
                   style={{ borderColor: `${color}33` }}
                 >
                   <p className="font-mono text-xs" style={{ color }}>
                     {job.date}
                   </p>
                   <h3 className="text-xl font-bold mt-1">{job.title}</h3>
-                  <p className="font-mono text-sm text-white/50 mb-4">
+                  <p className="font-mono text-sm text-black/50 mb-4">
                     @ {job.company}
                   </p>
 
@@ -56,7 +56,7 @@ export default function ExperienceTimeline() {
                     {job.points.map((point, i) => (
                       <li
                         key={i}
-                        className="text-sm text-white/65 leading-relaxed flex gap-2"
+                        className="text-sm text-black/65 leading-relaxed flex gap-2"
                       >
                         <span style={{ color }} className="font-mono">
                           ▹
@@ -70,7 +70,7 @@ export default function ExperienceTimeline() {
                     {job.tech.map((t) => (
                       <span
                         key={t}
-                        className="font-mono text-[11px] px-2.5 py-1 rounded-full border border-white/10 text-white/60"
+                        className="font-mono text-[11px] px-2.5 py-1 rounded-full border border-black/10 text-black/60"
                       >
                         {t}
                       </span>
