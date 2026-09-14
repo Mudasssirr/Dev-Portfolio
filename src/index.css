@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+@import "react-vertical-timeline-component/style.min.css";
+
+@theme {
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-bg: #05070d;
+  --color-surface: #0b0f1a;
+  --color-surface-2: #10162599;
+  --color-border: #ffffff14;
+
+  --color-cyan: #22d3ee;
+  --color-purple: #a855f7;
+  --color-green: #34d399;
+  --color-pink: #f472b6;
+  --color-amber: #fbbf24;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: #e6edf3;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #22d3ee55;
+  color: #fff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #22d3ee, #a855f7);
+  border-radius: 8px;
+}
+
+/* Glass panel utility */
+.glass {
+  background: rgba(16, 22, 37, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #22d3ee, #a855f7 60%, #34d399);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Grid / dot background */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, #ffffff08 1px, transparent 1px),
+    linear-gradient(to bottom, #ffffff08 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.glow-cyan {
+  box-shadow: 0 0 40px -10px #22d3ee55;
+}
+.glow-purple {
+  box-shadow: 0 0 40px -10px #a855f755;
+}
+
+/* Typed.js cursor */
+.typed-cursor {
+  color: #22d3ee;
+}
+
+/* Vertical timeline overrides for dark IDE theme */
+.vertical-timeline::before {
+  background: linear-gradient(180deg, #22d3ee55, #a855f755, #34d39955) !important;
+  width: 3px !important;
+}
+.vertical-timeline-element-content {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+.vertical-timeline-element-content-arrow {
+  display: none !important;
+}
+.vertical-timeline-element-icon {
+  box-shadow: 0 0 0 4px #ffffff10, 0 0 25px 2px currentColor !important;
+}
+
+/* Slick dots */
+.slick-dots li button:before {
+  color: #22d3ee !important;
+  opacity: 0.4 !important;
+  font-size: 9px !important;
+}
+.slick-dots li.slick-active button:before {
+  opacity: 1 !important;
+  color: #a855f7 !important;
+}
+.slick-slide > div {
+  height: 100%;
+}
+.slick-track {
+  display: flex !important;
+}
+.slick-slide {
+  height: auto !important;
+  display: flex !important;
+}
